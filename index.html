@@ -222,6 +222,10 @@ body::before{inset:-15%;animation:aur 22s ease-in-out infinite alternate}@keyfra
 #bn button.on i{animation:bnb .5s}@keyframes bnb{40%{transform:translateY(-8px) scale(1.25)}}
 .bf{position:fixed;pointer-events:none;z-index:99;font-size:1.2rem;animation:cf 1s ease-out forwards}
 body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!important}body.noanim #bgfx,body.noanim .fl{display:none}
+/* Only requested home-button alignment */
+.hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%;max-width:480px;margin-top:4px;align-items:stretch}
+.hero-actions>a{display:flex!important;align-items:center;justify-content:center;text-align:center;box-sizing:border-box;width:100%;min-width:0;min-height:50px;padding:11px 10px;white-space:nowrap;border-radius:999px;text-decoration:none;line-height:1.2}
+@media(max-width:360px){.hero-actions{gap:7px}.hero-actions>a{font-size:.84rem;padding:10px 5px}}
 </style>
 </head>
 <body>
@@ -232,7 +236,7 @@ body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!importan
 <div class="sub" id="greet" style="margin:0 0 8px;font-weight:500"></div>
 <h1>Hi, I'm <span id="nm" class="grad" contenteditable="true" spellcheck="false" title="Click to edit your name">OSHAN dev</span></h1>
 <div class="typ"><span id="typed"></span><i></i></div>
-<a class="btn" href="#study" style="text-decoration:none;display:inline-block">Open dashboard</a> <a class="ghost" href="#marks" style="display:inline-block">Marks analytics</a>
+<div class="hero-actions"><a class="btn" href="#study">Open dashboard</a><a class="ghost" href="#marks">Marks analytics</a></div>
 <div class="cdl">⏳ Countdown to A/L exam <input type="date" id="examDate" aria-label="Exam date"></div>
 <div class="cd"><div class="card"><b id="cd1">0</b><small>days</small></div><div class="card"><b id="cd2">0</b><small>hours</small></div><div class="card"><b id="cd3">0</b><small>minutes</small></div><div class="card"><b id="cd4">0</b><small>seconds</small></div></div>
 <div class="g g3" style="margin-top:24px">
@@ -815,9 +819,8 @@ $('#icG').onclick=e=>{const b=e.target.closest('.gb');if(!b)return;store.set('ic
 const gi=store.get('icg','AL');document.querySelectorAll('.gb').forEach(x=>x.classList.toggle('on',x.dataset.g===gi));
 function anSet(){const on=store.get('anim',true);document.body.classList.toggle('noanim',!on);$('#anB').textContent='Animations: '+(on?'ON ✨':'OFF')}
 $('#anB').onclick=()=>{store.set('anim',!store.get('anim',true));anSet()};anSet();
-$('.ph').insertAdjacentHTML('beforeend','<button class="ib" id="picB" aria-label="Change picture">📷</button>');
 const hp=store.get('heroPic','');if(hp)$('.pi img').src=hp;
-$('#picB').onclick=$('#picS').onclick=()=>$('#picF').click();
+$('#picS').onclick=()=>$('#picF').click();
 $('#picF').onchange=e=>{const f=e.target.files[0];if(!f)return;const im=new Image,u=URL.createObjectURL(f);im.onload=()=>{const c=document.createElement('canvas'),n=480,m=Math.min(im.width,im.height);c.width=c.height=n;c.getContext('2d').drawImage(im,(im.width-m)/2,(im.height-m)/2,m,m,0,0,n,n);const d=c.toDataURL('image/jpeg',.85);store.set('heroPic',d);$('.pi img').src=d;URL.revokeObjectURL(u);closeSheets();toast('Picture updated 📸')};im.src=u};
 (function(){const em=[...'✨⭐📚💡🎯🔥🧠🚀'],b=document.createElement('div');b.id='bgfx';b.setAttribute('aria-hidden','true');
  b.innerHTML=Array.from({length:16},(_,i)=>`<span style="left:${(i*6.2+Math.random()*4).toFixed(1)}%;--s:${(1+Math.random()*1.4).toFixed(2)}rem;--d:${(14+Math.random()*14).toFixed(1)}s;--dl:${(-Math.random()*20).toFixed(1)}s;--dx:${(Math.random()*80-40).toFixed(0)}px">${i%3?'':em[i%em.length]}</span>`).join('');document.body.prepend(b)})();
