@@ -5,8 +5,8 @@
 <meta name="theme-color" content="#3b82f6">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
-<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="A/L 2026">
-<title>A/L 2026 Dashboard</title>
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="A/L 2027">
+<title>A/L 2027 Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Inter:wght@400;500;600&family=Noto+Sans+Sinhala:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -176,10 +176,10 @@ section.fa>.g>.card:nth-child(even){animation-delay:-3.5s}
 *{-webkit-tap-highlight-color:transparent}html,body{overscroll-behavior-y:none}
 button,.pill,.tab,.tile,.item,.d{touch-action:manipulation;-webkit-user-select:none;user-select:none}
 body{padding-top:calc(var(--th) + env(safe-area-inset-top,0px));padding-bottom:calc(var(--bh) + 28px + env(safe-area-inset-bottom,0px))}
-body::after,nav,footer,.fl{display:none!important}
+body::after,nav,footer{display:none!important}
 body>section{display:none;padding:14px 14px 10px!important}body>section#hero{padding-top:10px!important}
 body>section.cur{display:block;animation:scr .28s both}@keyframes scr{from{opacity:0;transform:translateY(10px)}}
-.rv{opacity:1!important;transform:none!important}section.fa>.card,section.fa>.g>.card{animation:none!important}
+.rv{opacity:1!important;transform:none!important}section.fa>.card,section.fa>.g>.card{animation:none}
 @media(hover:none){.card:hover,.pill:hover,.tab:hover,.ghost:hover,.btn:hover{transform:none}}
 .btn:active,.ghost:active,.tab:active,.tile:active,.item:active,.d:active{transform:scale(.95)}
 #ab{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;gap:8px;padding:calc(8px + env(safe-area-inset-top,0px)) 14px 8px;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
@@ -195,10 +195,37 @@ body>section.cur{display:block;animation:scr .28s both}@keyframes scr{from{opaci
 @keyframes up{from{transform:translateY(100%)}}.sh .gr{display:block;width:44px;height:5px;border-radius:9px;background:var(--line);margin:0 auto 14px}.sh h3{margin:4px 0 12px}
 #toast{bottom:calc(var(--bh) + 28px + env(safe-area-inset-bottom,0px))}
 .chat{height:calc(100dvh - 250px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));min-height:360px}
+
+/* ===== v2: compact + animations + palette ===== */
+.card{padding:14px;border-radius:20px}.sb{padding:10px 6px}.val{font-size:1.25rem}.lbl{font-size:.62rem}.ch{height:170px}
+.fr{width:180px;height:180px}.fr>div{width:150px;height:150px}
+.g3{grid-template-columns:repeat(3,1fr)!important;gap:8px}#hero .fc{padding:10px 4px}#hero .fc .em{font-size:1.4rem}#hero .fc .val{font-size:1.1rem}#hero .fc .lbl{font-size:.55rem}
+.cd{gap:8px;margin:14px 0 6px}.cd div{flex:1;min-width:0;padding:8px 4px}.cd b{font-size:1.25rem}
+.ph{width:min(180px,48vw)}.hp{padding:8px}.o{width:38px;height:38px;font-size:1.1rem;border-radius:12px}
+.hin{gap:12px}#hero h1{font-size:clamp(1.8rem,8.5vw,2.6rem)}.typ{margin:8px 0 14px}h2{font-size:1.4rem}.sub{margin:4px 0 14px;font-size:.9rem}
+.im{width:66px;height:66px;font-size:2.1rem}.tgs{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.sk{width:56px!important;height:56px!important;font-size:1.9rem!important}.dc{padding:12px 8px}.tile{padding:10px 4px}
+textarea{width:100%;background:var(--inp);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:11px 12px;font:inherit;font-size:16px;resize:vertical;margin-bottom:10px}
+input[type=color]{height:38px;border:1px solid var(--line);border-radius:10px;background:var(--inp);padding:2px;width:56px}
+.dn b{text-decoration:line-through;color:var(--mute)}.nt [contenteditable]{outline:none}.nt .q{margin-top:4px}
+#picB{position:absolute;right:2%;bottom:2%;z-index:4;width:42px;height:42px;background:var(--card)}
+.pw{display:flex;flex-wrap:wrap;gap:8px}.pal{width:44px;height:44px;border-radius:50%;border:3px solid transparent;cursor:pointer;padding:0}.pal.on{border-color:var(--text)}
+.gb{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text);font:700 .8rem Sora;cursor:pointer;padding:0}.gb.on{border-color:var(--blue);box-shadow:0 0 0 2px var(--blue)}
+body::before{inset:-15%;animation:aur 22s ease-in-out infinite alternate}@keyframes aur{to{transform:translate(6%,4%) rotate(8deg) scale(1.1)}}
+#bgfx{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+#bgfx span{position:absolute;bottom:-80px;font-size:var(--s);opacity:0;animation:bgf var(--d) linear infinite;animation-delay:var(--dl)}
+#bgfx span:empty{width:calc(var(--s)*16);height:calc(var(--s)*16);border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--oc,var(--pink)),transparent 70%)}
+#bgfx span:nth-child(3n+1):empty{--oc:var(--blue)}#bgfx span:nth-child(3n+2):empty{--oc:var(--orange)}
+@keyframes bgf{0%{transform:translate(0,0) rotate(0);opacity:0}10%,90%{opacity:.4}100%{transform:translate(var(--dx),-115vh) rotate(40deg);opacity:0}}
+.ent{animation:cin .5s cubic-bezier(.2,.8,.2,1) calc(var(--n,0)*55ms) both!important}@keyframes cin{from{opacity:0;transform:translateY(22px) scale(.97)}}
+.btn{position:relative;overflow:hidden}.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.35) 50%,transparent 60%);transform:translateX(-120%);animation:shn 3.5s ease-in-out infinite}@keyframes shn{60%,100%{transform:translateX(120%)}}
+#bn button.on i{animation:bnb .5s}@keyframes bnb{40%{transform:translateY(-8px) scale(1.25)}}
+.bf{position:fixed;pointer-events:none;z-index:99;font-size:1.2rem;animation:cf 1s ease-out forwards}
+body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!important}body.noanim #bgfx,body.noanim .fl{display:none}
 </style>
 </head>
 <body>
-<nav><div class="logo">A/L<span>.2026</span></div><div class="pills" id="navl"></div><button class="pill" id="theme" aria-label="Switch theme">🌙</button></nav>
+<nav><div class="logo">A/L<span>.2027</span></div><div class="pills" id="navl"></div><button class="pill" id="theme" aria-label="Switch theme">🌙</button></nav>
 
 <section id="hero"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
 <div class="hin"><div class="hl">
@@ -309,6 +336,10 @@ body>section.cur{display:block;animation:scr .28s both}@keyframes scr{from{opaci
 
 <section id="roadmap" class="rv"><h2>🧭 Roadmap to AI science</h2><p class="sub">Tap a stage to open it.</p><div class="tl" id="tl"></div></section>
 
+<section id="notes" class="rv"><h2>🗒️ Notes & to-do</h2><p class="sub">Liyaganna one ewa methana liyanna. Offline wath wada karanawa.</p>
+<div class="card"><input type="text" id="ntT" placeholder="Title / task…" style="margin-bottom:10px"><textarea id="ntB" rows="3" placeholder="Details (optional)"></textarea>
+<div class="row r2"><select id="ntK"><option value="note">📝 Note</option><option value="todo">☑️ To-do</option></select><select id="ntS"></select></div><button class="btn full" id="ntAdd">Add</button></div>
+<div class="row r2" style="margin:12px 0 8px"><input type="text" id="ntQ" placeholder="🔍 Search"><select id="ntF"></select></div><div id="ntL"></div></section>
 <section id="dream" class="rv"><h2>🌠 Dream board</h2><p class="sub">The life I'm building. Tap a dream when I've won it 🎉</p>
 <div class="card db" id="db"><div class="gl gla"></div><div class="gl glb"></div><div class="fx" id="fx"></div>
 <div class="hd"><span class="st1">✨</span><span class="mi">MIND IT!</span><span class="st2">💫</span></div><div class="dq" id="dq"></div>
@@ -319,7 +350,14 @@ body>section.cur{display:block;animation:scr .28s both}@keyframes scr{from{opaci
 <header id="ab"><h1><span id="abI">🏠</span><span id="abT">A/L.2026</span><span id="net" title="online"></span></h1><button class="ib" id="abA" aria-label="Study AI">🤖</button><button class="ib" id="abTh" aria-label="Theme">🌓</button><button class="ib" id="abS" aria-label="Settings">⚙️</button></header>
 <div id="bn"><button data-go="hero"><i>🏠</i>Home</button><button data-go="study"><i>📚</i>Study</button><button data-go="discipline"><i>✅</i>Habits</button><button data-go="focus"><i>⏱️</i>Focus</button><button id="bnMore"><i>☰</i>More</button></div>
 <div class="sh" id="moreSh"><div><span class="gr"></span><h3>All sections</h3><div class="tiles" id="moreG"></div></div></div>
-<div class="sh" id="setSh"><div><span class="gr"></span><h3>⚙️ Settings</h3>
+<div class="sh" id="setSh"><div><span class="gr"></span><h3>⚙️ Settings</h3><div class="sg" style="margin-top:0">🎨 Colour palette</div><div class="pw" id="palG"></div>
+<div class="li" style="margin-top:10px;align-items:center"><span class="lbl" style="margin:0">Custom</span><input type="color" id="pc1" value="#3b82f6"><input type="color" id="pc2" value="#d946ef"></div>
+<div class="sg">🖼️ Home picture</div><button class="ghost sm" id="picS" style="width:100%">Change picture</button><input type="file" id="picF" accept="image/*" hidden>
+<div class="sg">📲 App icon</div><div class="li" style="align-items:center"><img id="icP" width="60" height="60" style="border-radius:16px" alt=""><div class="pw" id="icG" style="flex:1"></div></div>
+<p class="lbl" style="text-transform:none">Icon eka wenas wenne Home screen ekata aluthen Add karanakota witharai.</p>
+<div class="sg">✨ Animations</div><button class="ghost sm" id="anB" style="width:100%"></button>
+<div class="sg">🤖 Study AI</div>
+
 <label class="lbl">Gemini API key</label><input type="password" id="gKey" placeholder="Paste your key here" autocomplete="off">
 <label class="lbl" style="margin-top:10px">Model</label><input type="text" id="gModel" placeholder="gemini-flash-latest">
 <button class="btn full" id="gSave">Save AI settings</button>
@@ -686,14 +724,14 @@ $('#msF').onchange=msDraw;
 $('#msL').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.md)mss=mss.filter(m=>m.id!==b.dataset.md);else if(b.dataset.mr){const m=mss.find(x=>x.id===b.dataset.mr);m.r=!m.r}else return;store.set('mist',mss);msDraw()});
 
 /* ===== NAVIGATION (scroll between sections) ===== */
-const NP=[['hero','🏠','Home','#06b6d4'],['study','📚','Study log','#10b981'],['marks','📈','Marks','#ec4899'],['discipline','✅','Habits','#22c55e'],['plan','🗓️','90 days','#3b82f6'],['mist','🧠','Mistakes','#ef4444'],['planner','📅','Planner','#eab308'],['papers','📝','Papers','#8b5cf6'],['focus','⏱️','Focus','#f97316'],['targets','🎯','Targets','#d946ef'],['ai','🤖','Study AI','#6366f1'],['roadmap','🧭','Roadmap','#14b8a6'],['dream','🌠','Dreams','#f59e0b']];
+const NP=[['hero','🏠','Home','#06b6d4'],['study','📚','Study log','#10b981'],['marks','📈','Marks','#ec4899'],['discipline','✅','Habits','#22c55e'],['plan','🗓️','90 days','#3b82f6'],['mist','🧠','Mistakes','#ef4444'],['planner','📅','Planner','#eab308'],['notes','🗒️','Notes','#f59e0b'],['papers','📝','Papers','#8b5cf6'],['focus','⏱️','Focus','#f97316'],['targets','🎯','Targets','#d946ef'],['ai','🤖','Study AI','#6366f1'],['roadmap','🧭','Roadmap','#14b8a6'],['dream','🌠','Dreams','#f59e0b']];
 $('#navl').innerHTML=NP.map(x=>`<a class="pill" href="#${x[0]}" data-go="${x[0]}">${x[1]} ${x[2]}</a>`).join('');
 $('.hl').insertAdjacentHTML('beforeend','<div class="arena" id="arena"></div>');
 $('.hl').insertAdjacentHTML('beforeend','<div class="sg">🔥 Discipline</div><div class="card" id="dcCard"></div>');
 function go(id,push=true){const el=document.getElementById(id);if(!el||!el.matches('body>section'))return;
  document.querySelectorAll('body>section.cur').forEach(s=>s.classList.remove('cur'));el.classList.add('cur','v');window.scrollTo(0,0);mark(id);setBar(id);closeSheets();
  if(push&&!(history.state&&history.state.s===id))history.pushState({s:id},'');
- requestAnimationFrame(()=>Object.values(ch).forEach(c=>{try{c.resize()}catch(e){}}))}
+ stag(el);requestAnimationFrame(()=>Object.values(ch).forEach(c=>{try{c.resize()}catch(e){}}))}
 document.addEventListener('click',e=>{const g=e.target.closest('[data-go]'),a=e.target.closest('a[href^="#"]'),id=g?g.dataset.go:(a&&a.getAttribute('href').slice(1));if(id&&document.getElementById(id)){e.preventDefault();go(id)}});
 function mark(id){document.querySelectorAll('#navl .pill').forEach(b=>{const on=b.dataset.go===id;b.classList.toggle('on',on);if(on){const c=$('#navl');c.scrollTo({left:b.offsetLeft-c.clientWidth/2+b.offsetWidth/2,behavior:'smooth'})}})}
 const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)mark(e.target.id)}),{rootMargin:'-40% 0px -55% 0px'});
@@ -740,7 +778,7 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 const MAIN=['hero','study','discipline','focus'];
 function closeSheets(){document.querySelectorAll('.sh').forEach(s=>s.classList.remove('s'))}
 function openSh(id){closeSheets();$('#'+id).classList.add('s')}
-function setBar(id){const x=NP.find(n=>n[0]===id);$('#abT').textContent=id==='hero'?'A/L.2026':x[2];$('#abI').textContent=x[1];
+function setBar(id){const x=NP.find(n=>n[0]===id);$('#abT').textContent=id==='hero'?'A/L.2027':x[2];$('#abI').textContent=x[1];
  document.querySelectorAll('#bn button').forEach(b=>b.classList.toggle('on',b.dataset.go===id||(b.id==='bnMore'&&!MAIN.includes(id))))}
 $('#moreG').innerHTML=NP.filter(n=>!MAIN.includes(n[0])).map(n=>`<button class="tile" data-go="${n[0]}"><span class="ic" style="--c:${n[3]};width:50px;height:50px;font-size:1.6rem">${n[1]}</span>${n[2]}</button>`).join('');
 $('#bnMore').onclick=()=>openSh('moreSh');$('#abA').onclick=()=>go('ai');$('#abTh').onclick=()=>$('#theme').click();
@@ -755,6 +793,47 @@ const net=()=>$('#net').classList.toggle('off',!navigator.onLine);addEventListen
 let dip;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dip=e;$('#inst').style.display='block'});$('#inst').onclick=()=>{dip&&dip.prompt()};
 addEventListener('popstate',e=>go((e.state&&e.state.s)||'hero',false));
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{});
+
+/* ===== v2 JS ===== */
+function stag(el){el.querySelectorAll(':scope>.card,:scope>.g>.card,:scope>.tiles>*,:scope .tc,:scope .dw,:scope>#ntL>*').forEach((c,i)=>{c.style.setProperty('--n',Math.min(i,12));c.classList.remove('ent');void c.offsetWidth;c.classList.add('ent')})}
+const PAL=[['Ocean','#3b82f6','#8b5cf6','#d946ef','#f97316'],['Sunset','#f97316','#ef4444','#ec4899','#eab308'],['Forest','#10b981','#14b8a6','#22c55e','#84cc16'],['Royal','#6366f1','#8b5cf6','#a855f7','#06b6d4'],['Rose','#ec4899','#f43f5e','#d946ef','#fb923c'],['Cyber','#06b6d4','#22d3ee','#a3e635','#f0abfc'],['Gold','#eab308','#f59e0b','#f97316','#ef4444']];
+const rgba=(h,a)=>{const n=parseInt(h.slice(1),16);return `rgba(${n>>16},${n>>8&255},${n&255},${a})`};
+function curPal(){const v=store.get('pal',0);return typeof v==='number'?PAL[v].slice(1):v}
+function mkIcon(n,g,p){const c=document.createElement('canvas');c.width=c.height=n;const x=c.getContext('2d'),gr=x.createLinearGradient(0,0,n,n);gr.addColorStop(0,p[0]);gr.addColorStop(.5,p[1]);gr.addColorStop(1,p[2]);x.fillStyle=gr;x.fillRect(0,0,n,n);x.fillStyle='#fff';x.textAlign='center';x.textBaseline='middle';
+ if(g==='AL'){x.font='800 '+n*.34+'px Sora,Arial,sans-serif';x.fillText('A/L',n/2,n*.44);x.font='700 '+n*.15+'px Sora,Arial,sans-serif';x.fillText('2027',n/2,n*.68)}else{x.font=n*.52+'px "Apple Color Emoji","Noto Color Emoji",sans-serif';x.fillText(g,n/2,n*.54)}return c.toDataURL('image/png')}
+function setIcon(){const g=store.get('icg','AL'),p=curPal(),a=mkIcon(192,g,p);$('#icP').src=a;if(!store.get('icg',0))return;
+ document.querySelectorAll('link[rel=icon],link[rel=apple-touch-icon]').forEach(l=>l.href=a);const b=new URL('./',location.href).href,z=mkIcon(512,g,p);
+ const m={name:'A/L 2027 Dashboard',short_name:'A/L 2027',start_url:b,scope:b,display:'standalone',orientation:'portrait',background_color:'#080b17',theme_color:p[0],icons:[{src:a,sizes:'192x192',type:'image/png'},{src:z,sizes:'512x512',type:'image/png',purpose:'any'},{src:z,sizes:'512x512',type:'image/png',purpose:'maskable'}]};
+ document.querySelector('link[rel=manifest]').href=URL.createObjectURL(new Blob([JSON.stringify(m)],{type:'application/manifest+json'}))}
+function applyPal(){const p=curPal();['--blue','--purple','--pink','--orange'].forEach((v,i)=>root.style.setProperty(v,p[i]));root.style.setProperty('--g1',rgba(p[2],.22));root.style.setProperty('--g2',rgba(p[0],.25));
+ document.querySelector('meta[name=theme-color]').content=p[0];const v=store.get('pal',0);document.querySelectorAll('.pal').forEach((b,i)=>b.classList.toggle('on',v===i));setIcon();if(window.ready&&typeof refreshAll==='function')refreshAll()}
+$('#palG').innerHTML=PAL.map((p,i)=>`<button class="pal" data-i="${i}" aria-label="${p[0]}" style="background:linear-gradient(135deg,${p[1]},${p[2]},${p[3]})"></button>`).join('');
+$('#palG').onclick=e=>{const b=e.target.closest('.pal');if(b){store.set('pal',+b.dataset.i);applyPal()}};
+['pc1','pc2'].forEach(i=>$('#'+i).onchange=()=>{const a=$('#pc1').value,b=$('#pc2').value;store.set('pal',[a,a,b,b]);applyPal()});
+$('#icG').innerHTML=['AL','🎓','📚','🧠','🚀','⚡','🔥','🎯'].map(g=>`<button class="gb" data-g="${g}">${g==='AL'?'A/L':g}</button>`).join('');
+$('#icG').onclick=e=>{const b=e.target.closest('.gb');if(!b)return;store.set('icg',b.dataset.g);setIcon();document.querySelectorAll('.gb').forEach(x=>x.classList.toggle('on',x===b));toast('Icon set 📲 Home screen ekata aluthen add karanna')};
+const gi=store.get('icg','AL');document.querySelectorAll('.gb').forEach(x=>x.classList.toggle('on',x.dataset.g===gi));
+function anSet(){const on=store.get('anim',true);document.body.classList.toggle('noanim',!on);$('#anB').textContent='Animations: '+(on?'ON ✨':'OFF')}
+$('#anB').onclick=()=>{store.set('anim',!store.get('anim',true));anSet()};anSet();
+$('.ph').insertAdjacentHTML('beforeend','<button class="ib" id="picB" aria-label="Change picture">📷</button>');
+const hp=store.get('heroPic','');if(hp)$('.pi img').src=hp;
+$('#picB').onclick=$('#picS').onclick=()=>$('#picF').click();
+$('#picF').onchange=e=>{const f=e.target.files[0];if(!f)return;const im=new Image,u=URL.createObjectURL(f);im.onload=()=>{const c=document.createElement('canvas'),n=480,m=Math.min(im.width,im.height);c.width=c.height=n;c.getContext('2d').drawImage(im,(im.width-m)/2,(im.height-m)/2,m,m,0,0,n,n);const d=c.toDataURL('image/jpeg',.85);store.set('heroPic',d);$('.pi img').src=d;URL.revokeObjectURL(u);closeSheets();toast('Picture updated 📸')};im.src=u};
+(function(){const em=[...'✨⭐📚💡🎯🔥🧠🚀'],b=document.createElement('div');b.id='bgfx';b.setAttribute('aria-hidden','true');
+ b.innerHTML=Array.from({length:16},(_,i)=>`<span style="left:${(i*6.2+Math.random()*4).toFixed(1)}%;--s:${(1+Math.random()*1.4).toFixed(2)}rem;--d:${(14+Math.random()*14).toFixed(1)}s;--dl:${(-Math.random()*20).toFixed(1)}s;--dx:${(Math.random()*80-40).toFixed(0)}px">${i%3?'':em[i%em.length]}</span>`).join('');document.body.prepend(b)})();
+function burst(x,y){if(document.body.classList.contains('noanim'))return;[...'🎉✨⭐💫🎊🔥✨'].forEach(t=>{const e=document.createElement('i');e.className='bf';e.textContent=t;e.style.cssText=`left:${x}px;top:${y}px;--x:${Math.random()*180-90}px;--y:${-40-Math.random()*110}px`;document.body.appendChild(e);setTimeout(()=>e.remove(),1000)})}
+document.addEventListener('click',e=>{if(e.target.closest('.btn,.item'))burst(e.clientX,e.clientY)});
+/* notes */
+const NK='notes_v1',NT=['General','Physics','Pure','Applied','Chemistry','Personal'];let nts=store.get(NK,[]);const nsv=()=>store.set(NK,nts);
+$('#ntS').innerHTML=NT.map(t=>`<option>${t}</option>`).join('');$('#ntF').innerHTML=['All',...NT].map(t=>`<option>${t}</option>`).join('');
+function ntDraw(){const q=$('#ntQ').value.toLowerCase(),f=$('#ntF').value;
+ $('#ntL').innerHTML=nts.filter(n=>(f==='All'||n.s===f)&&(n.t+n.b).toLowerCase().includes(q)).sort((a,b)=>b.p-a.p||b.id-a.id).map(n=>`<div class="card nt${n.d?' dn':''}" data-id="${n.id}" style="margin-bottom:10px;padding:12px"><div style="display:flex;gap:10px;align-items:flex-start">${n.k==='todo'?`<div class="box" data-a="tg" style="--c:var(--green);cursor:pointer${n.d?';background:var(--green);color:#fff':''}">✓</div>`:'<span>📝</span>'}<div style="flex:1;min-width:0"><b contenteditable data-a="et" spellcheck="false">${esc(n.t)}</b><div contenteditable data-a="eb" class="q" style="white-space:pre-wrap">${esc(n.b)}</div><small class="lbl" style="margin:6px 0 0">${n.s} · ${new Date(n.id).toLocaleDateString()}</small></div><button class="ghost sm" data-a="pn" style="padding:6px 10px">${n.p?'📌':'📍'}</button><button class="ghost sm del" data-a="dl" style="padding:6px 10px">✕</button></div></div>`).join('')||'<span class="lbl">Nothing here yet</span>'}
+$('#ntAdd').onclick=()=>{const t=$('#ntT').value.trim();if(!t)return toast('Title ekak liyanna');nts.push({id:Date.now(),t,b:$('#ntB').value.trim(),k:$('#ntK').value,s:$('#ntS').value,p:0,d:0});nsv();$('#ntT').value=$('#ntB').value='';ntDraw();toast('Saved 🗒️')};
+$('#ntQ').oninput=$('#ntF').onchange=ntDraw;
+$('#ntL').addEventListener('click',e=>{const a=e.target.closest('[data-a]'),c=e.target.closest('.nt');if(!a||!c)return;const n=nts.find(x=>x.id==c.dataset.id),k=a.dataset.a;
+ if(k==='tg')n.d=n.d?0:1;else if(k==='pn')n.p=n.p?0:1;else if(k==='dl'){if(!confirm('Delete this?'))return;nts=nts.filter(x=>x!==n)}else return;nsv();ntDraw()});
+$('#ntL').addEventListener('focusout',e=>{const a=e.target.dataset.a,c=e.target.closest('.nt');if(!c||(a!=='et'&&a!=='eb'))return;const n=nts.find(x=>x.id==c.dataset.id);if(n){n[a==='et'?'t':'b']=e.target.textContent.trim();nsv()}});
+ntDraw();applyPal();
 history.replaceState({s:'hero'},'');go('hero',false);
 </script>
 </body>
